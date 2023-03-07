@@ -35,6 +35,10 @@ public class ControladorPrincipal implements ActionListener{
 			System.out.println("boton gestor Actividades clicado");
 		}else if(e.getSource()==ventanaPrincipal.btnPanelInscip) {
 			System.out.println("boton gestor Incripcion clicado");
+			//crear el modelo necesario
+			//crear la vista que tendrá que abrir
+			//crear el controlador pasandole el modelo y la vista que controlará
+			//inicializar y visualizar
 		}
 	}
 
