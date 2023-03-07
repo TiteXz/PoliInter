@@ -3,7 +3,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import modelo.dao.AccesoBBDD;
 import vista.PanelPrincipal;
+import vista.PanelUsuarios;
 
 public class ControladorPrincipal implements ActionListener{
 	private PanelPrincipal ventanaPrincipal;
@@ -31,6 +33,12 @@ public class ControladorPrincipal implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==ventanaPrincipal.btnPanelUsu) {
 			System.out.println("boton gestor Usuario clicado");
+			AccesoBBDD gb = new AccesoBBDD();
+			vista.PanelUsuarios usuarios = new PanelUsuarios(ventanaPrincipal, true);
+			
+			ControladorUsuario usuariosC = new ControladorUsuario(gb, usuarios);
+			usuariosC.inicializar();
+			usuarios.setVisible(true);
 		}else if(e.getSource()==ventanaPrincipal.btnPanelActi) {
 			System.out.println("boton gestor Actividades clicado");
 		}else if(e.getSource()==ventanaPrincipal.btnPanelInscip) {
